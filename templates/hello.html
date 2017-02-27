@@ -1,38 +1,83 @@
 {% extends "base.html" %}
 {% block head %}
   {{ super() }}
+  <!-- <link rel="stylesheet" href="/static/css/login.css">
+  <script src="/static/js/login.js"></script> -->
   <style media="screen">
-      .main-area {
-          margin-bottom: 340px;
-      }
+    .lar {
+        margin-top: 30%;
+    }
+    body {
+        background-color: #f4f4f4;
+    }
   </style>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="/static/css/style.css">
 {% endblock %}
 {% block title %}主页{% endblock %}
 {% block content %}
     <div class="container">
-        <h1>注册</h1>
-        {% for user in users %}
-        <h5>
+        <div class="lar">
+
+        </div>
+        <!-- {% for user in users %}
+        <h6>
             <strong>name:</strong> {{ user.username }}
-        </h5>
-        {% endfor %}
-        <form action="/register" method="post">
-            <input type="text" name="username" placeholder="请输入用户名">
-            <br>
-            <input type="text" name="password" placeholder="请输入密码">
-            <br>
-            <button type="submit">注册</button>
-        </form>
-        <h1>登录</h1>
-        <form action="/login" method="post">
-            <input type="text" name="username" placeholder="请输入用户名">
-            <br>
-            <input type="text" name="password" placeholder="请输入密码">
-            <br>
-            <button type="submit">登录</button>
-        </form>
-        <h1>欢迎， {{ username }} 创建于： {{ time }}</h1>
-        <a href="/logout">退出</a>
+        </h6>
+        {% endfor %} -->
+        <div class="row">
+            <div class="col s5" id="particles-js"></div>
+            <div class="col s3 offset-s4 card-panel hoverable">
+                <ul id="tabs-swipe-demo" class="tabs">
+                    <li class="tab col s6"><a href="#test-swipe-1">注册</a></li>
+                    <li class="tab col s6"><a href="#test-swipe-2">登陆</a></li>
+                </ul>
+                <div id="test-swipe-1" class="col s12">
+                    <form action="/register" method="post">
+                        <div class="input-field">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="icon_prefix" class="validate" type="text" name="username">
+                            <label for="icon_prefix">Username</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="icon_prefix" class="validate" type="text" name="password">
+                            <label for="icon_prefix">Password</label>
+                        </div>
+                        <button class="waves-effect waves-light btn ai-red secondary-content" type="submit"><i class="material-icons left">cloud</i>注册</button>
+                    </form>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div id="test-swipe-2" class="col s12">
+                    <form action="/login" method="post">
+                        <div class="input-field">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="icon_prefix" class="validate" type="text" name="username">
+                            <label for="icon_prefix">Username</label>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="icon_prefix" class="validate" type="text" name="password">
+                            <label for="icon_prefix">Password</label>
+                        </div>
+                        <button class="waves-effect waves-light btn ai-red secondary-content" type="submit"><i class="material-icons left">launch</i>登录</button>
+                    </form>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!-- <h5>欢迎， {{ username }} 创建于： {{ time }}</h5> -->
+        <!-- <a href="/logout">退出</a> -->
     </div>
 
+
+    <!-- scripts -->
+    <script src="/static/js/particles.js"></script>
+    <script src="/static/js/app.js"></script>
 {% endblock %}
