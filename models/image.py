@@ -12,6 +12,7 @@ class Image(db.Document, ModelMixin):
     created_time = db.DateTimeField(default=datetime.datetime.now())
 
 # created by Cai
+# test
 
 
 class Mark(db.Document, ModelMixin):
